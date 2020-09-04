@@ -1,0 +1,128 @@
+#rcorners1 {
+
+  border-radius: 35px;
+
+  background: rgb(0, 0, 255, 0.5);
+
+  padding: 20px;
+
+  width: 1146px;
+
+  height: 725px;
+
+  color: white;
+
+  top: 50%;
+
+  left: 50%;
+
+  -webkit-transform: translate(-50%, -50%);
+
+  transform: translate(-50%, -50%);
+
+  position: absolute;
+
+  font-family: 'Roboto', sans-serif;
+
+}
+#container {
+  border-radius: 35px;
+  
+  background: rgb(72, 72, 207, .53);
+  
+
+  padding: 20px;
+
+  width: 1086px;
+
+  height: 669px;
+
+  color: white;
+
+  top: 50%;
+
+  left: 50%;
+
+  -webkit-transform: translate(-50%, -50%);
+
+  transform: translate(-50%, -50%);
+
+  position: absolute;
+
+  font-family: 'Roboto', sans-serif;
+}
+p {
+  color: rgb(72, 72, 207, .53);
+  font-family: 'Microsoft JhengHei UI', sans-serif;
+  font-size: 40px;
+}
+#app {
+  border-radius: 35px;
+  
+  background: rgba(255, 255, 255);
+  
+  text-align: center;
+
+  padding: 20px;
+
+  width: 375px;
+
+  height: 669px;
+
+  color: white;
+
+  top: 50%;
+
+  left: 18.5%;
+
+  -webkit-transform: translate(-50%, -50%);
+
+  transform: translate(-50%, -50%);
+
+  position: absolute;
+
+  font-family: 'Roboto', sans-serif;
+
+  font-weight: bold;
+}
+
+#color {
+
+  color: white;
+
+}
+
+#icon {
+  background-color: rgb(220, 220, 220, .43);
+  width: 350px;
+  height: 200px;
+  border-radius: 35px;
+  margin-left: 13px;
+  margin-top: 30px;
+}
+
+#iconid {
+  padding-top: 12px;
+}
+#map {
+  margin-top: 310px;
+  margin-left: 32px;
+  height: 350px;
+  width: 350px;
+  border-radius: 20px;
+  margin: center;
+}
+h1 {
+  margin-left: 450px;
+  font-size: 70px;
+}
+img { 
+  width: 80px;
+  margin-left: -120px;
+}
+h3 {
+  color: rgb(72, 72, 207, .53);
+  font-size: 50px;
+  margin-top: -110px;
+  margin-left: 105px;
+}

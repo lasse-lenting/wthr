@@ -1,0 +1,63 @@
+<html><head> 
+    <title>Leaflet Web Map</title> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""> 
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script> 
+    <link rel="index.css">
+    <style>
+  #map {
+      width: 800px;
+      height: 800px;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      position: absolute;
+  }
+  </style> 
+   </head> 
+   <body> 
+    <div id="map"></div> 
+    <script>
+        var api = '499f91a4cb33aaa5a85d0e4af92029ea'
+        var options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+        
+        function success(pos) {
+            var crd = pos.coords;
+            console.log('Your current position is:');
+            console.log(`Latitude : ${crd.latitude}`);
+            console.log(`Longitude: ${crd.longitude}`);
+            console.log(`More or less ${crd.accuracy} meters.`);
+        
+            var map = L.map('map',{
+            center: [crd.latitude, crd.longitude],
+            zoom: 15
+            })
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);  
+            L.marker([crd.latitude, crd.longitude]).addTo(map)
+            .bindPopup(value.main.temp)
+            .openPopup();
+            console.log(crd.longitude, crd.latitude)
+            console.log('https://api.openweathermap.org/data/2.5/weather?lat=' + crd.latitude+ '&lon='+ crd.longitude +'&appid=' + api)
+            fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + crd.latitude+ '&lon='+ crd.longitude +'&appid=' + api)
+            .then(function(resp) { 
+                let res = resp.json() 
+                Promise.resolve(res).then(function(data) {
+                    console.log(data.main.temp); // "Success"
+                    return data.main.temp;
+                })
+            }) // Convert data to json
+        }
+        function error(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+        
+        navigator.geolocation.getCurrentPosition(success, error, options); 
+  
+    </script> 
+  </body></html>
